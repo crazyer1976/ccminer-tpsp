@@ -46,8 +46,8 @@ extern "C" int scanhash_yescrypt(int thr_id, uint32_t *pdata,
 		cudaSetDeviceFlags(cudaDeviceScheduleBlockingSync);
 		cudaDeviceSetCacheConfig(cudaFuncCachePreferL1);
 		 
-		CUDA_SAFE_CALL(cudaMalloc(&d_hash[thr_id],  2048 * 128 * sizeof(uint64_t) * throughput));
-		CUDA_SAFE_CALL(cudaMalloc(&d_hash2[thr_id], 8 * sizeof(uint32_t) * throughput));
+		CUDA_SAFE_CALL(cudaMalloc(&d_hash[thr_id],  4096 * 128 * sizeof(uint64_t) * throughput));
+		CUDA_SAFE_CALL(cudaMalloc(&d_hash2[thr_id], 16 * sizeof(uint32_t) * throughput));
 		CUDA_SAFE_CALL(cudaMalloc(&d_hash3[thr_id], 32*64 * sizeof(uint32_t) * throughput));
 		CUDA_SAFE_CALL(cudaMalloc(&d_hash4[thr_id], 32*8 * sizeof(uint32_t) * throughput));
 
